@@ -4,10 +4,15 @@ namespace Winter.Services;
 
 public interface IUsersService
 {
-  public void CreateUser(User user);
-  public List<User> GetAll();
-  public void UpdateUser(User user);
+  public User CreateUser(string firstName, string lastName);
+  public IEnumerable<User> GetAll();
+  public User UpdateUser(
+    Guid id,
+    string firstName,
+    string lastName
+  );
   public void DeleteUser(Guid id);
+  public User GetById(Guid id);
 }
 
 public class UsersService : IUsersService
@@ -15,24 +20,70 @@ public class UsersService : IUsersService
   private readonly List<User> _users =
     new()
     {
-      new User(Guid.NewGuid(), "Dimon", "Coder"),
-      new User(Guid.NewGuid(), "White", "Snow"),
+      new User(
+        Guid.NewGuid(),
+        "Dimon",
+        "Coder",
+        DateTime.Now
+      ),
+      new User(
+        Guid.NewGuid(),
+        "White",
+        "Snow",
+        DateTime.Now
+      ),
     };
 
-  public void CreateUser(User user)
+  public User GetById(Guid id)
   {
-    _users.Add(user);
+    var foundUser = _users.SingleOrDefault(p => p.Id == id);
+    if (foundUser is null)
+    {
+      // TODO: test and upgrade it
+      throw new Exception("Not Found");
+    }
+    return foundUser;
   }
 
-  public List<User> GetAll()
+  public User CreateUser(string firstName, string lastName)
+  {
+    var newUser = new User(
+      Guid.NewGuid(),
+      firstName,
+      lastName,
+      DateTime.Now
+    );
+    _users.Add(newUser);
+    return newUser;
+  }
+
+  public IEnumerable<User> GetAll()
   {
     return this._users;
   }
 
-  public void UpdateUser(User user)
+  public User UpdateUser(
+    Guid id,
+    string firstName,
+    string lastName
+  )
   {
-    var index = _users.FindIndex(v => v.Id == user.Id);
-    _users.RemoveAt(index);
+    var index = this._users.FindIndex(v => v.Id == id);
+    var foundUser = _users[index];
+    if (foundUser is null)
+    {
+      // TODO: test and upgrade it
+      throw new Exception("Not Found");
+    }
+
+    var updatedUser = foundUser with
+    {
+      FirstName = firstName,
+      LastName = lastName,
+    };
+    _users[index] = updatedUser;
+
+    return updatedUser;
   }
 
   public void DeleteUser(Guid id)
