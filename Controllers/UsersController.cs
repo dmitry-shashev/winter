@@ -30,8 +30,8 @@ public class UsersController : ControllerBase
   )
   {
     var createdUser = _usersService.CreateUser(
-      userDto.firstName,
-      userDto.lastName
+      userDto.FirstName,
+      userDto.LastName
     );
     return createdUser.AsResponseDto();
   }
@@ -44,8 +44,8 @@ public class UsersController : ControllerBase
   {
     var updatedUser = _usersService.UpdateUser(
       id,
-      userDto.firstName,
-      userDto.lastName
+      userDto.FirstName,
+      userDto.LastName
     );
     return updatedUser.AsResponseDto();
   }

@@ -5,6 +5,7 @@ global using Winter.Models;
 global using Winter.Models.Adapters;
 global using Winter.Models.Dto.Response;
 global using Winter.Models.Dto.Request;
+global using Winter.Core.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//##############################################################
+// exception middleware
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+//##############################################################
 
 if (app.Environment.IsDevelopment())
 {

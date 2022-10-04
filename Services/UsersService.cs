@@ -1,5 +1,3 @@
-using Winter.Models;
-
 namespace Winter.Services;
 
 public interface IUsersService
@@ -39,8 +37,7 @@ public class UsersService : IUsersService
     var foundUser = _users.SingleOrDefault(p => p.Id == id);
     if (foundUser is null)
     {
-      // TODO: test and upgrade it
-      throw new Exception("Not Found");
+      throw new NotFoundException("User was not found");
     }
     return foundUser;
   }
@@ -72,8 +69,7 @@ public class UsersService : IUsersService
     var foundUser = _users[index];
     if (foundUser is null)
     {
-      // TODO: test and upgrade it
-      throw new Exception("Not Found");
+      throw new NotFoundException("User was not found");
     }
 
     var updatedUser = foundUser with

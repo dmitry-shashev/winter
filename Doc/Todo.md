@@ -1,4 +1,4 @@
-[ ] Exceptions handling
+[x] Exceptions handling
 [ ] Add entity framework
 [ ] Validations
 [ ] Migrations

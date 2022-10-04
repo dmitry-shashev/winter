@@ -1,6 +1,6 @@
 namespace Winter.Models.Dto.Request;
 
 public record AddUserRequestDto(
-  string firstName,
-  string lastName
+  string FirstName,
+  string LastName
 );
