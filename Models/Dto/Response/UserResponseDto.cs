@@ -1,7 +1,7 @@
 namespace Winter.Models.Dto.Response;
 
 public record UserResponseDto(
-  Guid Id,
+  int Id,
   string FirstName,
   string LastName
 );

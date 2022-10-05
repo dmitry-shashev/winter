@@ -1,5 +1,6 @@
 [x] Exceptions handling
-[ ] Add entity framework
+[x] Add entity framework
+[ ] Add seeds
 [ ] Validations
 [ ] Migrations
 [ ] Add seeds

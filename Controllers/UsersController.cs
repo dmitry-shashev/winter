@@ -17,8 +17,8 @@ public class UsersController : ControllerBase
     return users.Select(v => v.AsResponseDto());
   }
 
-  [HttpGet("{id:guid}")]
-  public UserResponseDto GetById(Guid id)
+  [HttpGet("{id:int}")]
+  public UserResponseDto GetById(int id)
   {
     var user = _usersService.GetById(id);
     return user.AsResponseDto();
@@ -36,9 +36,9 @@ public class UsersController : ControllerBase
     return createdUser.AsResponseDto();
   }
 
-  [HttpPut("{id:guid}")]
+  [HttpPut("{id:int}")]
   public UserResponseDto UpdateUser(
-    Guid id,
+    int id,
     AddUserRequestDto userDto
   )
   {
@@ -48,5 +48,11 @@ public class UsersController : ControllerBase
       userDto.LastName
     );
     return updatedUser.AsResponseDto();
+  }
+
+  [HttpDelete("{id:int}")]
+  public void DeleteUser(int id)
+  {
+    _usersService.DeleteUser(id);
   }
 }

@@ -1,5 +1,4 @@
 using System.Net;
-using Winter.Core.Exceptions;
 using AspHttpContext = Microsoft.AspNetCore.Http.HttpContext;
 
 namespace Winter.Core.Exceptions;
@@ -25,7 +24,7 @@ public class ExceptionMiddleware
       HandleException(context, ex.StatusCode, ex.Message);
     }
     // override any other errors
-    catch (Exception ex)
+    catch
     {
       // here we can send errors or log them
       HandleException(
