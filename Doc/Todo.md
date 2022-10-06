@@ -1,8 +1,8 @@
 [x] Exceptions handling
 [x] Add entity framework
-[ ] Add seeds
+[x] Add seeds
+[ ] Docker
 [ ] Validations
 [ ] Migrations
 [ ] Add seeds
 [ ] Add auto-tests
-[ ] Add docker container

@@ -15,23 +15,18 @@ public interface IUsersService
 
 public class UsersService : IUsersService
 {
-  private readonly ApplicationDbContext _appDbContext;
+  private readonly ApplicationDbContext _dbContext;
 
   public UsersService(ApplicationDbContext context)
   {
-    _appDbContext = context;
+    this._dbContext = context;
   }
-
-  private readonly List<User> _users =
-    new()
-    {
-      new User(1, "Dimon", "Coder", DateTime.Now),
-      new User(2, "White", "Snow", DateTime.Now),
-    };
 
   public User GetById(int id)
   {
-    var foundUser = _users.SingleOrDefault(p => p.Id == id);
+    var foundUser = _dbContext.Users.FirstOrDefault(
+      p => p.Id == id
+    );
     if (foundUser is null)
     {
       throw new NotFoundException("User was not found");
@@ -47,13 +42,14 @@ public class UsersService : IUsersService
       lastName,
       DateTime.Now
     );
-    _users.Add(newUser);
+    _dbContext.Users.Add(newUser);
+    _dbContext.SaveChanges();
     return newUser;
   }
 
   public IEnumerable<User> GetAll()
   {
-    return this._users;
+    return this._dbContext.Users;
   }
 
   public User UpdateUser(
@@ -62,31 +58,35 @@ public class UsersService : IUsersService
     string lastName
   )
   {
-    var index = this._users.FindIndex(v => v.Id == id);
-    var foundUser = _users[index];
-    if (foundUser is null)
+    var user = _dbContext.Users.FirstOrDefault(
+      v => v.Id == id
+    );
+    if (user is null)
     {
       throw new NotFoundException("User was not found");
     }
 
-    var updatedUser = foundUser with
+    var updatedUser = user with
     {
       FirstName = firstName,
       LastName = lastName,
     };
-    _users[index] = updatedUser;
+    _dbContext.Users.Update(updatedUser);
+    _dbContext.SaveChanges();
 
     return updatedUser;
   }
 
   public void DeleteUser(int id)
   {
-    var index = _users.FindIndex(v => v.Id == id);
-    var foundUser = _users[index];
-    if (foundUser is null)
+    var user = _dbContext.Users.FirstOrDefault(
+      v => v.Id == id
+    );
+    if (user is null)
     {
       throw new NotFoundException("User was not found");
     }
-    _users.RemoveAt(index);
+
+    _dbContext.Users.Remove(user);
   }
 }
