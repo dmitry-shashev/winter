@@ -30,6 +30,7 @@ public class UsersController : ControllerBase
   )
   {
     var createdUser = _usersService.CreateUser(
+      userDto.Email,
       userDto.FirstName,
       userDto.LastName
     );

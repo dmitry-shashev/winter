@@ -10,6 +10,7 @@ public static class UserAdapters
   {
     return new UserResponseDto(
       user.Id,
+      user.Email,
       user.FirstName,
       user.LastName
     );

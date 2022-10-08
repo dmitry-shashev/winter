@@ -1,8 +1,11 @@
 [x] Exceptions handling
 [x] Add entity framework
+[x] Migrations
 [x] Add seeds
+[ ] Validations (+custom)
+[ ] Add logs
+[ ] Work with cookies
+[ ] Authorization
+[ ] Authorization
 [ ] Docker
-[ ] Validations
-[ ] Migrations
-[ ] Add seeds
 [ ] Add auto-tests

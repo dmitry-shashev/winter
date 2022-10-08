@@ -2,7 +2,11 @@ namespace Winter.Services;
 
 public interface IUsersService
 {
-  public User CreateUser(string firstName, string lastName);
+  public User CreateUser(
+    string email,
+    string firstName,
+    string lastName
+  );
   public IEnumerable<User> GetAll();
   public User UpdateUser(
     int id,
@@ -34,10 +38,15 @@ public class UsersService : IUsersService
     return foundUser;
   }
 
-  public User CreateUser(string firstName, string lastName)
+  public User CreateUser(
+    string email,
+    string firstName,
+    string lastName
+  )
   {
     var newUser = new User(
-      DateTime.Now.Second,
+      0,
+      email,
       firstName,
       lastName,
       DateTime.Now

@@ -16,3 +16,10 @@
 dotnet ef migrations add MockUsers
 dornet ef database update
 ```
+
+#### Reset and apply all migrations with seeds
+
+```bash
+dotnet ef database update 0
+dotnet ef database update
+```
