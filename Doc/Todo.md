@@ -2,10 +2,10 @@
 [x] Add entity framework
 [x] Migrations
 [x] Add seeds
-[ ] Validations (+custom)
-[ ] Add logs
-[ ] Work with cookies
-[ ] Authorization
+[x] Validations (+custom)
+[x] Add logs
+[ ] Work with cookies and sessions
 [ ] Authorization
 [ ] Docker
+[ ] Deploy
 [ ] Add auto-tests

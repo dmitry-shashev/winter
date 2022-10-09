@@ -5,13 +5,15 @@ public interface IUsersService
   public User CreateUser(
     string email,
     string firstName,
-    string lastName
+    string lastName,
+    string phone
   );
   public IEnumerable<User> GetAll();
   public User UpdateUser(
     int id,
     string firstName,
-    string lastName
+    string lastName,
+    string phone
   );
   public void DeleteUser(int id);
   public User GetById(int id);
@@ -41,7 +43,8 @@ public class UsersService : IUsersService
   public User CreateUser(
     string email,
     string firstName,
-    string lastName
+    string lastName,
+    string phone
   )
   {
     var newUser = new User(
@@ -49,6 +52,7 @@ public class UsersService : IUsersService
       email,
       firstName,
       lastName,
+      phone,
       DateTime.Now
     );
     _dbContext.Users.Add(newUser);
@@ -64,7 +68,8 @@ public class UsersService : IUsersService
   public User UpdateUser(
     int id,
     string firstName,
-    string lastName
+    string lastName,
+    string phone
   )
   {
     var user = _dbContext.Users.FirstOrDefault(
@@ -79,6 +84,7 @@ public class UsersService : IUsersService
     {
       FirstName = firstName,
       LastName = lastName,
+      Phone = phone
     };
     _dbContext.Users.Update(updatedUser);
     _dbContext.SaveChanges();

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Winter.Migrations
 {
-  public partial class NewField : Migration
+  public partial class UsersPhone : Migration
   {
     protected override void Up(
       MigrationBuilder migrationBuilder
@@ -13,7 +13,7 @@ namespace Winter.Migrations
     {
       migrationBuilder
         .AddColumn<string>(
-          name: "Email",
+          name: "Phone",
           table: "Users",
           type: "longtext",
           nullable: false
@@ -24,20 +24,20 @@ namespace Winter.Migrations
         table: "Users",
         keyColumn: "Id",
         keyValue: 1,
-        columns: new[] { "CreatedAt", "Email" },
+        columns: new[] { "CreatedAt", "Phone" },
         values: new object[]
         {
           new DateTime(
             2022,
             10,
-            6,
-            18,
-            54,
-            56,
-            580,
+            9,
+            16,
+            5,
+            4,
+            206,
             DateTimeKind.Local
-          ).AddTicks(8130),
-          "tt1@tt.tt"
+          ).AddTicks(6630),
+          "12-12-12"
         }
       );
 
@@ -45,20 +45,20 @@ namespace Winter.Migrations
         table: "Users",
         keyColumn: "Id",
         keyValue: 2,
-        columns: new[] { "CreatedAt", "Email" },
+        columns: new[] { "CreatedAt", "Phone" },
         values: new object[]
         {
           new DateTime(
             2022,
             10,
-            6,
-            18,
-            54,
-            56,
-            580,
+            9,
+            16,
+            5,
+            4,
+            206,
             DateTimeKind.Local
-          ).AddTicks(8170),
-          "tt2@tt.tt"
+          ).AddTicks(6680),
+          "13-99-14"
         }
       );
 
@@ -66,20 +66,20 @@ namespace Winter.Migrations
         table: "Users",
         keyColumn: "Id",
         keyValue: 3,
-        columns: new[] { "CreatedAt", "Email" },
+        columns: new[] { "CreatedAt", "Phone" },
         values: new object[]
         {
           new DateTime(
             2022,
             10,
-            6,
-            18,
-            54,
-            56,
-            580,
+            9,
+            16,
+            5,
+            4,
+            206,
             DateTimeKind.Local
-          ).AddTicks(8170),
-          "tt3@tt.tt"
+          ).AddTicks(6680),
+          "33-33-32"
         }
       );
     }
@@ -89,7 +89,7 @@ namespace Winter.Migrations
     )
     {
       migrationBuilder.DropColumn(
-        name: "Email",
+        name: "Phone",
         table: "Users"
       );
 
@@ -102,12 +102,12 @@ namespace Winter.Migrations
           2022,
           10,
           6,
-          11,
-          47,
-          55,
-          310,
+          18,
+          54,
+          56,
+          580,
           DateTimeKind.Local
-        ).AddTicks(3260)
+        ).AddTicks(8130)
       );
 
       migrationBuilder.UpdateData(
@@ -119,12 +119,12 @@ namespace Winter.Migrations
           2022,
           10,
           6,
-          11,
-          47,
-          55,
-          310,
+          18,
+          54,
+          56,
+          580,
           DateTimeKind.Local
-        ).AddTicks(3320)
+        ).AddTicks(8170)
       );
 
       migrationBuilder.UpdateData(
@@ -136,12 +136,12 @@ namespace Winter.Migrations
           2022,
           10,
           6,
-          11,
-          47,
-          55,
-          310,
+          18,
+          54,
+          56,
+          580,
           DateTimeKind.Local
-        ).AddTicks(3320)
+        ).AddTicks(8170)
       );
     }
   }

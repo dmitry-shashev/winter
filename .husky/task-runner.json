@@ -5,6 +5,11 @@
         "command": "dotnet",
         "args": [ "csharpier", "." ],
         "include": [ "**/*.cs" ]
-      }
+      },
+     {
+       "name": "Add formatted into git",
+       "command": "git",
+       "args": [ "add", "--all" ]
+     }
    ]
 }

@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
+using Winter.Core.Validators;
 
 namespace Winter.Models.Dto.Request;
 
@@ -10,5 +10,6 @@ public record AddUserRequestDto(
     string FirstName,
   [Required]
   [StringLength(50, MinimumLength = 2)]
-    string LastName
+    string LastName,
+  [Required] [CustomPhone] string Phone
 );

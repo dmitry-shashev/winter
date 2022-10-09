@@ -12,7 +12,8 @@ public static class UserAdapters
       user.Id,
       user.Email,
       user.FirstName,
-      user.LastName
+      user.LastName,
+      user.Phone
     );
   }
 }

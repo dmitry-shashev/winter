@@ -13,6 +13,7 @@ public class UsersSeed : IEntityTypeConfiguration<User>
         "tt1@tt.tt",
         "Tester",
         "Testerov",
+        "12-12-12",
         DateTime.Now
       ),
       new User(
@@ -20,9 +21,17 @@ public class UsersSeed : IEntityTypeConfiguration<User>
         "tt2@tt.tt",
         "Mike",
         "Tyson",
+        "13-99-14",
         DateTime.Now
       ),
-      new User(3, "tt3@tt.tt", "Red", "Sky", DateTime.Now)
+      new User(
+        3,
+        "tt3@tt.tt",
+        "Red",
+        "Sky",
+        "33-33-32",
+        DateTime.Now
+      )
     );
   }
 }
