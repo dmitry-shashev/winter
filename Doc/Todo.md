@@ -4,8 +4,8 @@
 [x] Add seeds
 [x] Validations (+custom)
 [x] Add logs
+[x] Docker
 [ ] Work with cookies and sessions
 [ ] Authorization
-[ ] Docker
 [ ] Deploy
 [ ] Add auto-tests
