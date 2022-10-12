@@ -5,12 +5,15 @@ services:
     build:
       context: ../../
       dockerfile: ./docker/local/Dockerfile
+    user: 1000:1000
     ports:
       - "7091:7091"
       - "5233:5233"
     network_mode: host
     volumes:
       - ../../:/app
+    depends_on:
+      - winter-db
   
   winter-db:
     image: mysql:5.7
