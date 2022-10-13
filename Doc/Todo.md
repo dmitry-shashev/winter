@@ -5,7 +5,8 @@
 [x] Validations (+custom)
 [x] Add logs
 [x] Docker
-[ ] Work with cookies and sessions
+[x] Work with cookies
+[ ] Add complex model data
 [ ] Authorization
 [ ] Deploy
 [ ] Add auto-tests
