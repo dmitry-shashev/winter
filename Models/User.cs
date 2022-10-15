@@ -1,10 +1,12 @@
 namespace Winter.Models;
 
-public record User(
-  int Id,
-  string Email,
-  string FirstName,
-  string LastName,
-  string Phone,
-  DateTime CreatedAt
-);
+public class User
+{
+  public int Id { get; init; }
+  public List<Book> Books { get; init; } = new List<Book>();
+  public string Email { get; init; } = "";
+  public string FirstName { get; set; } = "";
+  public string LastName { get; set; } = "";
+  public string Phone { get; set; } = "";
+  public DateTime CreatedAt { get; init; } = DateTime.Now;
+}

@@ -6,6 +6,7 @@ namespace Winter.Core;
 public class ApplicationDbContext : DbContext
 {
   public DbSet<User> Users => Set<User>();
+  public DbSet<Book> Books => Set<Book>();
 
   public ApplicationDbContext(
     DbContextOptions<ApplicationDbContext> options
@@ -17,5 +18,6 @@ public class ApplicationDbContext : DbContext
   {
     // apply seeds
     modelBuilder.ApplyConfiguration(new UsersSeed());
+    modelBuilder.ApplyConfiguration(new BooksSeed());
   }
 }

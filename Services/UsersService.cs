@@ -25,7 +25,7 @@ public class UsersService : IUsersService
 
   public UsersService(ApplicationDbContext context)
   {
-    this._dbContext = context;
+    _dbContext = context;
   }
 
   public User GetById(int id)
@@ -47,14 +47,14 @@ public class UsersService : IUsersService
     string phone
   )
   {
-    var newUser = new User(
-      0,
-      email,
-      firstName,
-      lastName,
-      phone,
-      DateTime.Now
-    );
+    var newUser = new User()
+    {
+      Id = 0,
+      Email = email,
+      FirstName = firstName,
+      LastName = lastName,
+      Phone = phone,
+    };
     _dbContext.Users.Add(newUser);
     _dbContext.SaveChanges();
     return newUser;
@@ -80,16 +80,13 @@ public class UsersService : IUsersService
       throw new NotFoundException("User was not found");
     }
 
-    var updatedUser = user with
-    {
-      FirstName = firstName,
-      LastName = lastName,
-      Phone = phone
-    };
-    _dbContext.Users.Update(updatedUser);
+    user.FirstName = firstName;
+    user.LastName = lastName;
+    user.Phone = phone;
+
     _dbContext.SaveChanges();
 
-    return updatedUser;
+    return user;
   }
 
   public void DeleteUser(int id)
