@@ -7,6 +7,7 @@
 [x] Docker
 [x] Work with cookies
 [ ] Add complex model data
+[ ] One to one and many to many to the response
 [ ] Authorization
 [ ] Deploy
 [ ] Add auto-tests
