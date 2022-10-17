@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Winter.Services;
 
 public interface IUsersService
@@ -9,6 +11,7 @@ public interface IUsersService
     string phone
   );
   public IEnumerable<User> GetAll();
+  public IEnumerable<User> GetAllWithBooks();
   public User UpdateUser(
     int id,
     string firstName,
@@ -62,7 +65,12 @@ public class UsersService : IUsersService
 
   public IEnumerable<User> GetAll()
   {
-    return this._dbContext.Users;
+    return _dbContext.Users;
+  }
+
+  public IEnumerable<User> GetAllWithBooks()
+  {
+    return _dbContext.Users.Include(v => v.Books);
   }
 
   public User UpdateUser(

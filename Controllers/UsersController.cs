@@ -13,7 +13,7 @@ public class UsersController : ControllerBase
   [HttpGet]
   public IEnumerable<UserResponseDto> GetAll()
   {
-    var users = _usersService.GetAll();
+    var users = _usersService.GetAllWithBooks();
     return users.Select(v => v.AsResponseDto());
   }
 

@@ -13,7 +13,8 @@ public static class UserAdapters
       user.Email,
       user.FirstName,
       user.LastName,
-      user.Phone
+      user.Phone,
+      user.Books.Select(v => v.AsResponseDto())
     );
   }
 }
