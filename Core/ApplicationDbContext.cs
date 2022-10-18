@@ -7,6 +7,7 @@ public class ApplicationDbContext : DbContext
 {
   public DbSet<User> Users => Set<User>();
   public DbSet<Book> Books => Set<Book>();
+  public DbSet<Library> Libraries => Set<Library>();
 
   public ApplicationDbContext(
     DbContextOptions<ApplicationDbContext> options
@@ -19,5 +20,23 @@ public class ApplicationDbContext : DbContext
     // apply seeds
     modelBuilder.ApplyConfiguration(new UsersSeed());
     modelBuilder.ApplyConfiguration(new BooksSeed());
+    modelBuilder.ApplyConfiguration(new LibrariesSeed());
+
+    // bind many to many data
+    modelBuilder.Entity(
+      "LibraryUser",
+      builder =>
+      {
+        builder.HasData(
+          new { LibrariesId = 1, UsersId = 1, }
+        );
+        builder.HasData(
+          new { LibrariesId = 1, UsersId = 2, }
+        );
+        builder.HasData(
+          new { LibrariesId = 2, UsersId = 3, }
+        );
+      }
+    );
   }
 }
