@@ -20,6 +20,7 @@ public interface IUsersService
   );
   public void DeleteUser(int id);
   public User GetById(int id);
+  public User GetByIdLibraries(int id);
 }
 
 public class UsersService : IUsersService
@@ -36,6 +37,18 @@ public class UsersService : IUsersService
     var foundUser = _dbContext.Users.FirstOrDefault(
       p => p.Id == id
     );
+    if (foundUser is null)
+    {
+      throw new NotFoundException("User was not found");
+    }
+    return foundUser;
+  }
+
+  public User GetByIdLibraries(int id)
+  {
+    var foundUser = _dbContext.Users
+      .Include(v => v.Libraries)
+      .FirstOrDefault(p => p.Id == id);
     if (foundUser is null)
     {
       throw new NotFoundException("User was not found");

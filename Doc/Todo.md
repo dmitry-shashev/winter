@@ -7,7 +7,7 @@
 [x] Docker
 [x] Work with cookies
 [x] Add complex model data
-[ ] One to one and many to many to the response
+[x] One to one and many to many to the response
 [ ] Task runner
 [ ] Deploy using native way
 [ ] Deploy using containers

@@ -24,6 +24,13 @@ public class UsersController : ControllerBase
     return user.AsResponseDto();
   }
 
+  [HttpGet("{id:int}/libraries")]
+  public UserResponseDto GetByIdLibraries(int id)
+  {
+    var user = _usersService.GetByIdLibraries(id);
+    return user.AsResponseDto();
+  }
+
   [HttpPost]
   public UserResponseDto CreateUser(
     AddUserRequestDto userDto

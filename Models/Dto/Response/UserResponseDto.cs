@@ -6,5 +6,6 @@ public record UserResponseDto(
   string FirstName,
   string LastName,
   string Phone,
-  IEnumerable<BookResponseDto> Books
+  IEnumerable<BookResponseDto> Books,
+  IEnumerable<LibraryResponseDto> Libraries
 );

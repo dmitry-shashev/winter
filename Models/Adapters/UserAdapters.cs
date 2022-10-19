@@ -14,7 +14,8 @@ public static class UserAdapters
       user.FirstName,
       user.LastName,
       user.Phone,
-      user.Books.Select(v => v.AsResponseDto())
+      user.Books.Select(v => v.AsResponseDto()),
+      user.Libraries.Select(v => v.AsResponseDto())
     );
   }
 }
