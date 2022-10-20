@@ -10,8 +10,10 @@ public interface IUsersService
     string lastName,
     string phone
   );
-  public IEnumerable<User> GetAll();
-  public IEnumerable<User> GetAllWithBooks();
+  public IEnumerable<User> GetAll(
+    bool withBooks = false,
+    bool withLibraries = false
+  );
   public User UpdateUser(
     int id,
     string firstName,
@@ -19,8 +21,11 @@ public interface IUsersService
     string phone
   );
   public void DeleteUser(int id);
-  public User GetById(int id);
-  public User GetByIdLibraries(int id);
+  public User GetById(
+    int id,
+    bool withBooks = false,
+    bool withLibraries = false
+  );
 }
 
 public class UsersService : IUsersService
@@ -32,23 +37,22 @@ public class UsersService : IUsersService
     _dbContext = context;
   }
 
-  public User GetById(int id)
+  public User GetById(
+    int id,
+    bool withBooks,
+    bool withLibraries
+  )
   {
-    var foundUser = _dbContext.Users.FirstOrDefault(
-      p => p.Id == id
-    );
-    if (foundUser is null)
+    var query = _dbContext.Users.AsQueryable();
+    if (withBooks)
     {
-      throw new NotFoundException("User was not found");
+      query = query.Include(v => v.Books);
     }
-    return foundUser;
-  }
-
-  public User GetByIdLibraries(int id)
-  {
-    var foundUser = _dbContext.Users
-      .Include(v => v.Libraries)
-      .FirstOrDefault(p => p.Id == id);
+    if (withLibraries)
+    {
+      query = query.Include(v => v.Libraries);
+    }
+    var foundUser = query.FirstOrDefault(p => p.Id == id);
     if (foundUser is null)
     {
       throw new NotFoundException("User was not found");
@@ -76,14 +80,22 @@ public class UsersService : IUsersService
     return newUser;
   }
 
-  public IEnumerable<User> GetAll()
+  public IEnumerable<User> GetAll(
+    bool withBooks = false,
+    bool withLibraries = false
+  )
   {
-    return _dbContext.Users;
-  }
+    var query = _dbContext.Users.AsQueryable();
+    if (withBooks)
+    {
+      query = query.Include(v => v.Books);
+    }
 
-  public IEnumerable<User> GetAllWithBooks()
-  {
-    return _dbContext.Users.Include(v => v.Books);
+    if (withLibraries)
+    {
+      query = query.Include(v => v.Libraries);
+    }
+    return query.ToList();
   }
 
   public User UpdateUser(
