@@ -8,6 +8,7 @@
 [x] Work with cookies
 [x] Add complex model data
 [x] One to one and many to many to the response
+[ ] Injecting models
 [ ] Task runner
 [ ] Deploy using native way
 [ ] Deploy using containers
