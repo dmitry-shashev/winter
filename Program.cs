@@ -27,6 +27,7 @@ builder.Services.AddDbContextPool<ApplicationDbContext>(
 // services
 
 builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 //##############################################################
 
