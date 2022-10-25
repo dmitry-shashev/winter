@@ -13,10 +13,10 @@ public class AuthController : ControllerBase
   [HttpPost("login")]
   public string Login(LoginRequestDto loginDto)
   {
-    var token = _authService.GetToken(
+    User user = _authService.Authenticate(
       loginDto.Email,
       loginDto.Password
     );
-    return token;
+    return _authService.GenerateJwtToken(user);
   }
 }

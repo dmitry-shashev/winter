@@ -23,6 +23,10 @@ public class ExceptionMiddleware
     {
       HandleException(context, ex.StatusCode, ex.Message);
     }
+    catch (AuthenticateException ex)
+    {
+      HandleException(context, ex.StatusCode, ex.Message);
+    }
     // override any other errors
     catch
     {

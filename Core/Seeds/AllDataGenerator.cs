@@ -12,6 +12,8 @@ public abstract class AllDataGenerator
         Email = "tt1@tt.tt",
         FirstName = "Tester",
         LastName = "Testerov",
+        Role = "Admin",
+        Password = "123456",
         Phone = "12-12-12",
       },
       new User()
@@ -20,6 +22,8 @@ public abstract class AllDataGenerator
         Email = "tt2@tt.tt",
         FirstName = "Mike",
         LastName = "Tyson",
+        Role = "",
+        Password = "123456",
         Phone = "13-99-14",
       },
       new User()
@@ -28,6 +32,8 @@ public abstract class AllDataGenerator
         Email = "tt3@tt.tt",
         FirstName = "Red",
         LastName = "Sky",
+        Role = "Owner",
+        Password = "123456",
         Phone = "33-33-32",
       }
     };

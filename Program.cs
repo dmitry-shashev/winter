@@ -6,7 +6,10 @@ global using Winter.Models.Adapters;
 global using Winter.Models.Dto.Response;
 global using Winter.Models.Dto.Request;
 global using Winter.Core.Exceptions;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +38,34 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//##############################################################
+// Add JWT
+
+builder.Services
+  .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+  .AddJwtBearer(options =>
+  {
+    options.TokenValidationParameters =
+      new TokenValidationParameters
+      {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration[
+          "Jwt:Audience"
+        ],
+        IssuerSigningKey = new SymmetricSecurityKey(
+          Encoding.UTF8.GetBytes(
+            builder.Configuration["Jwt:Key"]
+          )
+        )
+      };
+  });
+
+//##############################################################
 
 var app = builder.Build();
 
