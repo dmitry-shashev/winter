@@ -38,5 +38,12 @@ public class ApplicationDbContext : DbContext
         );
       }
     );
+
+    // example how we can do one to many using different fields
+    // modelBuilder.Entity<User>()
+    // 	.HasMany(c => c.Books)
+    // 	.WithOne()
+    // 	.HasForeignKey(v => v.SomeId)
+    // 	.HasPrincipalKey(v => v.SomeOtherId);
   }
 }
