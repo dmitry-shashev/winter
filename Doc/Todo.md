@@ -9,6 +9,7 @@
 [x] Add complex model data
 [x] One to one and many to many to the response
 [x] Scripting
+[ ] JWT
 [ ] Deploy using native way
 [ ] Deploy using containers
 [ ] Authorization
