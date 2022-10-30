@@ -11,6 +11,7 @@
 [x] Scripting
 [x] Inject the request in the service
 [ ] JWT
+[ ] Validation library
 [ ] Deploy using native way
 [ ] Deploy using containers
 [ ] Authorization
