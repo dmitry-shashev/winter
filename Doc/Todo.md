@@ -10,6 +10,7 @@
 [x] One to one and many to many to the response
 [x] Scripting
 [x] Inject the request in the service
+[ ] Custom scripts
 [ ] JWT
 [ ] Validation library
 [ ] Deploy using native way
