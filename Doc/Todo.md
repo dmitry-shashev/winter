@@ -10,6 +10,7 @@
 [x] One to one and many to many to the response
 [x] Scripting
 [x] Inject the request in the service
+[x] Export swagger json
 [ ] Custom scripts
 [ ] JWT
 [ ] Validation library
