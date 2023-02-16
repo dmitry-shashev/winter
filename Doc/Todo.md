@@ -11,7 +11,9 @@
 [x] Scripting
 [x] Inject the request in the service
 [x] Export swagger json
-[ ] Custom scripts
+[x] Custom scripts sub system
+[ ] Rollback and apply all migrations script
+[ ] Full clean script
 [ ] JWT
 [ ] Validation library
 [ ] Deploy using native way
