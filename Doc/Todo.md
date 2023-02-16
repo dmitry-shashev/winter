@@ -12,8 +12,9 @@
 [x] Inject the request in the service
 [x] Export swagger json
 [x] Custom scripts sub system
-[ ] Rollback and apply all migrations script
-[ ] Full clean script
+[x] Rollback and apply all migrations script
+[x] Full clean script / dotnet restore / tool restore
+[ ] Generation scripts
 [ ] JWT
 [ ] Validation library
 [ ] Deploy using native way

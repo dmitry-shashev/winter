@@ -40,7 +40,6 @@ And it allows to start each script simply
 ```bash
     <ItemGroup>
         <Compile Remove="Scripts\**" />
-        <Content Include="Scripts\**" />
     </ItemGroup>
 ```
 
@@ -55,4 +54,10 @@ foreach (var arg in Args)
 {
     Console.WriteLine(arg);
 }
+```
+
+#### Add entrypoint for scripts
+
+```bash
+./run.csx
 ```

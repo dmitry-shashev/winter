@@ -32,6 +32,5 @@
     <!-- exclude scripts folder from the build -->
     <ItemGroup>
         <Compile Remove="Scripts\**" />
-        <Content Include="Scripts\**" />
     </ItemGroup>
 </Project>
