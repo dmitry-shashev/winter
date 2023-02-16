@@ -24,7 +24,14 @@
         <Exec Command="dotnet husky install" StandardOutputImportance="Low" StandardErrorImportance="High" WorkingDirectory="." />
     </Target>
     
+    <!-- auto generating json file on each build -->
     <Target Name="CreateSwaggerJson" AfterTargets="Build" Condition="$(Configuration)=='Debug'">
 		<Exec Command="dotnet swagger tofile --output ./swagger.json $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
 	</Target>
+    
+    <!-- exclude scripts folder from the build -->
+    <ItemGroup>
+        <Compile Remove="Scripts\**" />
+        <Content Include="Scripts\**" />
+    </ItemGroup>
 </Project>
