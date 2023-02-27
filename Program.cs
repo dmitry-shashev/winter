@@ -12,6 +12,26 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+var environmentName = builder.Environment.EnvironmentName;
+
+//##############################################################
+// Load configs according to the env
+// for example - `dotnet run --environment Staging`
+// - will try to load `appsettings.Staging.json`
+
+builder.Configuration
+  .AddJsonFile(
+    "appsettings.json",
+    optional: false,
+    reloadOnChange: true
+  )
+  .AddJsonFile(
+    $"appsettings.{environmentName}.json",
+    optional: true,
+    reloadOnChange: true
+  )
+  .AddEnvironmentVariables();
+;
 
 //##############################################################
 // database
