@@ -1,15 +1,33 @@
 {
-   "tasks": [
-      {
-        "name": "Run csharpier",
-        "command": "dotnet",
-        "args": [ "csharpier", "." ],
-        "include": [ "**/*.cs" ]
-      },
-     {
-       "name": "Add formatted into git",
-       "command": "git",
-       "args": [ "add", "--all" ]
-     }
-   ]
+  "tasks":[
+    {
+      "name":"Run csharpier",
+      "command":"dotnet",
+      "args":[
+        "csharpier",
+        "."
+      ],
+      "include":[
+        "**/*.cs"
+      ]
+    },
+    {
+      "name":"Test building - creating swagger.json",
+      "command":"dotnet",
+      "args":[
+        "build",
+        "-c",
+        "SwaggerConfig",
+        "./Winter.csproj"
+      ]
+    },
+    {
+      "name":"Add formatted into git",
+      "command":"git",
+      "args":[
+        "add",
+        "--all"
+      ]
+    }
+  ]
 }
