@@ -65,6 +65,18 @@
         }
       }
     },
+    "/Log/test": {
+      "get": {
+        "tags": [
+          "Log"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/Session/read-color-cookie": {
       "get": {
         "tags": [
