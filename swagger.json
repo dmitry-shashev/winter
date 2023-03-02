@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/Auth/login": {
+    "/auth/login": {
       "post": {
         "tags": [
           "Auth"
@@ -53,7 +53,7 @@
         }
       }
     },
-    "/Log/write-log": {
+    "/log/write-log": {
       "get": {
         "tags": [
           "Log"
@@ -65,10 +65,97 @@
         }
       }
     },
-    "/Log/test": {
+    "/session/read-color-cookie": {
       "get": {
         "tags": [
-          "Log"
+          "Session"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/session/setup-color-cookie": {
+      "get": {
+        "tags": [
+          "Session"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/session/delete-color-cookie": {
+      "get": {
+        "tags": [
+          "Session"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/some-test/test-one": {
+      "get": {
+        "tags": [
+          "SomeTest"
         ],
         "responses": {
           "200": {
@@ -77,94 +164,7 @@
         }
       }
     },
-    "/Session/read-color-cookie": {
-      "get": {
-        "tags": [
-          "Session"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/Session/setup-color-cookie": {
-      "get": {
-        "tags": [
-          "Session"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/Session/delete-color-cookie": {
-      "get": {
-        "tags": [
-          "Session"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/Users": {
+    "/users": {
       "get": {
         "tags": [
           "Users"
@@ -248,7 +248,7 @@
         }
       }
     },
-    "/Users/{id}": {
+    "/users/{id}": {
       "get": {
         "tags": [
           "Users"
@@ -366,7 +366,7 @@
         }
       }
     },
-    "/Users/{id}/libraries": {
+    "/users/{id}/libraries": {
       "get": {
         "tags": [
           "Users"

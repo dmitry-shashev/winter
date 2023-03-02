@@ -1,4 +1,3 @@
-using System.Reflection.Emit;
 using Ardalis.SmartEnum;
 
 namespace Winter.Core.Constants;
@@ -28,6 +27,16 @@ public class RoleValue
   public bool Equals(RoleValue? other)
   {
     return this.Id == other?.Id;
+  }
+
+  public override bool Equals(object? obj)
+  {
+    return Equals(obj as RoleValue);
+  }
+
+  public override int GetHashCode()
+  {
+    return HashCode.Combine(Id);
   }
 }
 

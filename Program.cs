@@ -8,6 +8,7 @@ global using Winter.Models.Dto.Request;
 global using Winter.Core.Exceptions;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -54,7 +55,14 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 //##############################################################
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+  options.Conventions.Add(
+    new RouteTokenTransformerConvention(
+      new SlugifyParameterTransformer()
+    )
+  );
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
