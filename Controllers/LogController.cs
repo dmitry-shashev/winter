@@ -1,5 +1,3 @@
-using Winter.Core.Helpers;
-
 namespace Winter.Controllers;
 
 // This controller has examples of working with logs
@@ -18,11 +16,5 @@ public class LogController : ControllerBase
   public void WriteLog()
   {
     _logger.LogInformation("------> It works !!!");
-  }
-
-  [HttpGet("test")]
-  public void Test()
-  {
-    UserHelper.TestEnums();
   }
 }
