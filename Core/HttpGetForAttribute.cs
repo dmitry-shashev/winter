@@ -10,14 +10,14 @@ namespace Winter.Core;
   AllowMultiple = true,
   Inherited = true
 )]
-public class HttpGetDefaultAttribute
+public class HttpGetForAttribute
   : Attribute,
     IActionHttpMethodProvider,
     IRouteTemplateProvider
 {
   private int? _order;
 
-  public HttpGetDefaultAttribute(string methodName)
+  public HttpGetForAttribute(string methodName)
   {
     Template = StrHelper.ToKebabCase(methodName);
   }
