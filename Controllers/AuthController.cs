@@ -10,7 +10,7 @@ public class AuthController : ControllerBase
     _authService = authService;
   }
 
-  [HttpPost("login")]
+  [HttpGetFor(nameof(Login))]
   public string Login(LoginRequestDto loginDto)
   {
     User user = _authService.Authenticate(

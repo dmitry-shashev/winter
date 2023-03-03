@@ -5,7 +5,7 @@ namespace Winter.Controllers;
 [DefaultController]
 public class SomeTestController
 {
-  [HttpGetDefault(nameof(TestOne))]
+  [HttpGetFor(nameof(TestOne))]
   public void TestOne()
   {
     UserHelper.TestEnums();

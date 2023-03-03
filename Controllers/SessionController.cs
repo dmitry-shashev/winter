@@ -6,7 +6,7 @@ namespace Winter.Controllers;
 [DefaultController]
 public class SessionController : ControllerBase
 {
-  [HttpGet("read-color-cookie")]
+  [HttpGetFor(nameof(ReadColorCookie))]
   public string ReadColorCookie()
   {
     if (
@@ -18,14 +18,14 @@ public class SessionController : ControllerBase
     return $"The value is - {color}";
   }
 
-  [HttpGet("setup-color-cookie")]
+  [HttpGetFor(nameof(SetupColorCookie))]
   public string SetupColorCookie()
   {
     Response.Cookies.Append("color", "green");
     return "The cookie has been set up";
   }
 
-  [HttpGet("delete-color-cookie")]
+  [HttpGetFor(nameof(DeleteColorCookie))]
   public string DeleteColorCookie()
   {
     Response.Cookies.Delete("color");

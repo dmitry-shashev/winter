@@ -12,7 +12,7 @@ public class LogController : ControllerBase
     _logger = logger;
   }
 
-  [HttpGet("write-log")]
+  [HttpGetFor(nameof(WriteLog))]
   public void WriteLog()
   {
     _logger.LogInformation("------> It works !!!");
