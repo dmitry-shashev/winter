@@ -1,6 +1,6 @@
 using Winter.Core.Helpers;
 
-namespace Winter.Controllers;
+namespace Winter.Controllers.v1;
 
 [DefaultController]
 public class SomeTestController

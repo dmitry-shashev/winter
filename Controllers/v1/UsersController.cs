@@ -1,4 +1,4 @@
-namespace Winter.Controllers;
+namespace Winter.Controllers.v1;
 
 [DefaultController]
 public class UsersController : ControllerBase

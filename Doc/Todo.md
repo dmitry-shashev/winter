@@ -15,6 +15,7 @@
 [x] Rollback and apply all migrations script
 [x] Full clean script / dotnet restore / tool restore
 [x] Smart enums
+[x] API Version
 [ ] Update to the latest version - libs and dotnet
 [ ] Generation scripts
 [ ] JWT

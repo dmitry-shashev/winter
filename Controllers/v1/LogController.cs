@@ -1,4 +1,4 @@
-namespace Winter.Controllers;
+namespace Winter.Controllers.v1;
 
 // This controller has examples of working with logs
 
