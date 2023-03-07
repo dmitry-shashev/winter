@@ -15,7 +15,8 @@ public class DefaultControllerAttribute
 {
   private int? _order;
 
-  public string Template => "[controller]";
+  public string Template =>
+    "api/v{version:apiVersion}/[controller]";
 
   public int Order
   {

@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": ".NET Core (.NET 6) Web API",
+    "version": "2.0"
+  },
+  "paths": {
+    "/api/v2/some-test/test-two": {
+      "get": {
+        "tags": [
+          "SomeTest"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}
