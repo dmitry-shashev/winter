@@ -2,7 +2,6 @@
 global using Winter.Core;
 global using Winter.Services;
 global using Winter.Models;
-global using Winter.Models.Adapters;
 global using Winter.Models.Dto.Response;
 global using Winter.Models.Dto.Request;
 global using Winter.Core.Exceptions;
@@ -52,8 +51,8 @@ builder.Services.AddDbContextPool<ApplicationDbContext>(
 //##############################################################
 // services
 
-builder.Services.AddScoped<IUsersService, UsersService>();
-builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<UsersService>();
+builder.Services.AddScoped<AuthService>();
 
 //##############################################################
 

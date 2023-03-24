@@ -2,33 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Winter.Services;
 
-public interface IUsersService
-{
-  public User CreateUser(
-    string email,
-    string firstName,
-    string lastName,
-    string phone
-  );
-  public IEnumerable<User> GetAll(
-    bool withBooks = false,
-    bool withLibraries = false
-  );
-  public User UpdateUser(
-    int id,
-    string firstName,
-    string lastName,
-    string phone
-  );
-  public void DeleteUser(int id);
-  public User GetById(
-    int id,
-    bool withBooks = false,
-    bool withLibraries = false
-  );
-}
-
-public class UsersService : IUsersService
+public class UsersService
 {
   private readonly ApplicationDbContext _dbContext;
 
@@ -39,8 +13,8 @@ public class UsersService : IUsersService
 
   public User GetById(
     int id,
-    bool withBooks,
-    bool withLibraries
+    bool withBooks = false,
+    bool withLibraries = false
   )
   {
     var query = _dbContext.Users.AsQueryable();
