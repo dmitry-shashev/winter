@@ -1,11 +1,13 @@
+using Winter.Models.Adapters;
+
 namespace Winter.Controllers.v1;
 
 [DefaultController]
 public class UsersController : ControllerBase
 {
-  private readonly IUsersService _usersService;
+  private readonly UsersService _usersService;
 
-  public UsersController(IUsersService usersService)
+  public UsersController(UsersService usersService)
   {
     _usersService = usersService;
   }
@@ -37,10 +39,10 @@ public class UsersController : ControllerBase
   )
   {
     var createdUser = _usersService.CreateUser(
-      userDto.Email,
-      userDto.FirstName,
-      userDto.LastName,
-      userDto.Phone
+      email: userDto.Email,
+      firstName: userDto.FirstName,
+      lastName: userDto.LastName,
+      phone: userDto.Phone
     );
     return createdUser.AsResponseDto();
   }
@@ -52,10 +54,10 @@ public class UsersController : ControllerBase
   )
   {
     var updatedUser = _usersService.UpdateUser(
-      id,
-      userDto.FirstName,
-      userDto.LastName,
-      userDto.Phone
+      id: id,
+      firstName: userDto.FirstName,
+      lastName: userDto.LastName,
+      phone: userDto.Phone
     );
     return updatedUser.AsResponseDto();
   }

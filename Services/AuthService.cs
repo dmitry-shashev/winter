@@ -5,13 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Winter.Services;
 
-public interface IAuthService
-{
-  public string GenerateJwtToken(User user);
-  public User Authenticate(string email, string password);
-}
-
-public class AuthService : IAuthService
+public class AuthService
 {
   private readonly IConfiguration _config;
   private readonly ApplicationDbContext _dbContext;
