@@ -16,6 +16,8 @@
 [x] Full clean script / dotnet restore / tool restore
 [x] Smart enums
 [x] API Version
+[x] Add auto-mapper
+[ ] Upload files
 [ ] Update to the latest version - libs and dotnet
 [ ] Generation scripts
 [ ] JWT
