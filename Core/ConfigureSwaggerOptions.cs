@@ -45,7 +45,7 @@ public class ConfigureSwaggerOptions
   {
     var info = new OpenApiInfo()
     {
-      Title = ".NET Core (.NET 6) Web API",
+      Title = ".NET Core (.NET 7) Web API",
       Version = desc.ApiVersion.ToString()
     };
 
