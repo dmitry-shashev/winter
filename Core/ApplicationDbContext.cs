@@ -8,6 +8,8 @@ public class ApplicationDbContext : DbContext
   public DbSet<User> Users => Set<User>();
   public DbSet<Book> Books => Set<Book>();
   public DbSet<Library> Libraries => Set<Library>();
+  public DbSet<UploadedFile> UploadedFiles =>
+    Set<UploadedFile>();
 
   public ApplicationDbContext(
     DbContextOptions<ApplicationDbContext> options
