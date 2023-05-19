@@ -18,7 +18,7 @@
 [x] API Version
 [x] Add auto-mapper
 [x] Update to the latest version - libs and dotnet
-[ ] Upload files
+[x] Upload files
 [ ] Generation scripts
 [ ] JWT
 [ ] Validation library

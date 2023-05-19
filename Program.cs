@@ -53,6 +53,7 @@ builder.Services.AddDbContextPool<ApplicationDbContext>(
 
 builder.Services.AddScoped<UsersService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<FileService>();
 builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 
 //##############################################################
