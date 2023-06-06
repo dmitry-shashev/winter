@@ -2,6 +2,8 @@ using Ardalis.SmartEnum;
 
 namespace Winter.Core.Constants;
 
+// might be better to have some base-id role
+
 public class RoleValue
   : IComparable<RoleValue>,
     IEquatable<RoleValue>
@@ -45,15 +47,18 @@ public sealed class Roles : SmartEnum<Roles, RoleValue>
   //--------------------------------------------------------------------
   // possible values
 
-  public static readonly Roles Admin = new Roles(
-    nameof(Admin),
-    new RoleValue(1, "Admin", "admin")
-  );
+  public static readonly Roles Admin =
+    new(nameof(Admin), new RoleValue(1, "Admin", "admin"));
 
-  public static readonly Roles RegularCustomer = new Roles(
-    nameof(RegularCustomer),
-    new RoleValue(2, "Regular Customer", "regular_customer")
-  );
+  public static readonly Roles RegularCustomer =
+    new(
+      nameof(RegularCustomer),
+      new RoleValue(
+        2,
+        "Regular Customer",
+        "regular_customer"
+      )
+    );
 
   //--------------------------------------------------------------------
 
