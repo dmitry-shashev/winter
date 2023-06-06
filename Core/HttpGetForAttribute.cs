@@ -5,6 +5,10 @@ using Winter.Core.Helpers;
 
 namespace Winter.Core;
 
+// It encapsulates transforming names to kebab case
+
+// for classes - we are using - SlugifyParameterTransformer.cs
+
 [AttributeUsage(
   AttributeTargets.Method,
   AllowMultiple = true,

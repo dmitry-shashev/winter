@@ -3,6 +3,12 @@ using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace Winter.Core;
 
+// It encapsulates
+//   [ApiController]
+//   [Route("[controller]")]
+
+// also adds versions logic
+
 [AttributeUsage(
   AttributeTargets.Assembly | AttributeTargets.Class,
   AllowMultiple = false,
