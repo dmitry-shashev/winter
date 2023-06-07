@@ -12,6 +12,13 @@
       ]
     },
     {
+      "name":"Run unit tests",
+      "command":"dotnet",
+      "args":[
+        "test"
+      ]
+    },
+    {
       "name":"Test building - creating swagger.json",
       "command":"dotnet",
       "args":[

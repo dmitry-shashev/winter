@@ -19,7 +19,8 @@
 [x] Add auto-mapper
 [x] Update to the latest version - libs and dotnet
 [x] Upload files
-[ ] Add auto tests
+[x] Add auto tests
+[ ] Extend unite tests
 [ ] Generation scripts
 [ ] JWT
 [ ] Validation library
