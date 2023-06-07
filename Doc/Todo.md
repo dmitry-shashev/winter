@@ -20,7 +20,8 @@
 [x] Update to the latest version - libs and dotnet
 [x] Upload files
 [x] Add auto tests
-[ ] Extend unite tests
+[ ] Add unit tests to the github flow
+[ ] Unit tests for other parts
 [ ] Generation scripts
 [ ] JWT
 [ ] Validation library
