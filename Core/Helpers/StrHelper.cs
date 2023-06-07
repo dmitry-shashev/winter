@@ -11,4 +11,13 @@ public abstract class StrHelper
       .Replace(handledValue, "([a-z])([A-Z])", "$1-$2")
       .ToLower();
   }
+
+  public static bool IsEmpty(string? value)
+  {
+    if (value is null)
+    {
+      return true;
+    }
+    return value.Trim() == "";
+  }
 }
