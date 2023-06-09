@@ -20,7 +20,7 @@
 [x] Update to the latest version - libs and dotnet
 [x] Upload files
 [x] Add auto tests
-[ ] Add unit tests to the github flow
+[x] Add unit tests to the github flow
 [ ] Unit tests for other parts
 [ ] Generation scripts
 [ ] JWT
