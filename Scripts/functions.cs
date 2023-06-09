@@ -14,6 +14,9 @@ public abstract class Functions
 
   public static void RemoveDirectory(string path)
   {
-    Directory.Delete(path, true);
+    if (Directory.Exists(path))
+    {
+      Directory.Delete(path, true);
+    }
   }
 }
