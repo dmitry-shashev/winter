@@ -21,7 +21,10 @@
 [x] Upload files
 [x] Add auto tests
 [x] Add unit tests to the github flow
-[ ] Unit tests for other parts
+[x] Unit tests for other parts
+[x] Docker for db only
+[ ] Rest examples
+[ ] e2e tests
 [ ] Generation scripts
 [ ] JWT
 [ ] Validation library
