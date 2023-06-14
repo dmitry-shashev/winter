@@ -28,3 +28,11 @@ dotnet ef migrations add InitialCreate
 ```bash
 dotnet ef database update
 ```
+
+#### For docker may require to update the connection string
+
+Add
+
+```bash
+SSL Mode=None
+```
