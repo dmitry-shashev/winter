@@ -1,0 +1,10 @@
+### Get users
+
+GET https://localhost:7091/api/v1/users
+
+# -- Some specific user
+
+> {%
+var foundElem = response.body.find(v => v.id === 2);
+client.log(JSON.stringify(foundElem, null, 2));
+ %}
