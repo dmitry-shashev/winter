@@ -23,12 +23,13 @@
 [x] Add unit tests to the github flow
 [x] Unit tests for other parts
 [x] Docker for db only
-[ ] Rest examples
+[x] Rest examples
 [ ] e2e tests
+    As a subfolder e2e using nodejs
+    https://www.educative.io/answers/how-to-test-an-api-in-nodejs
 [ ] Generation scripts
 [ ] JWT
 [ ] Validation library
 [ ] Deploy using native way
 [ ] Deploy using containers
 [ ] Authorization
-[ ] Add auto-tests
