@@ -19,6 +19,12 @@
       "commands": [
         "dotnet-script"
       ]
+    },
+    "csharpier": {
+      "version": "0.24.2",
+      "commands": [
+        "dotnet-csharpier"
+      ]
     }
   }
 }
