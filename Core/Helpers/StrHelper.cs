@@ -20,4 +20,35 @@ public abstract class StrHelper
     }
     return value.Trim() == "";
   }
+
+  public static string DetermineFileContentType(
+    string fileName
+  )
+  {
+    var contentType = "";
+    if (
+      fileName.IndexOf(
+        ".pdf",
+        StringComparison.OrdinalIgnoreCase
+      ) >= 0
+    )
+    {
+      contentType = "application/pdf";
+    }
+    if (
+      fileName.IndexOf(
+        ".jpg",
+        StringComparison.OrdinalIgnoreCase
+      ) >= 0
+      || fileName.IndexOf(
+        ".jpeg",
+        StringComparison.OrdinalIgnoreCase
+      ) >= 0
+    )
+    {
+      contentType = "image/jpeg";
+    }
+
+    return contentType;
+  }
 }

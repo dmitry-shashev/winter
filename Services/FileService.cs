@@ -30,4 +30,14 @@ public class FileService
     );
     _dbContext.SaveChanges();
   }
+
+  public byte[] GetFile(string fileName)
+  {
+    var httpClient = new HttpClient();
+    return httpClient
+      .GetByteArrayAsync(
+        $"https://images.freeimages.com/images/large-previews/31a/{fileName}"
+      )
+      .Result;
+  }
 }

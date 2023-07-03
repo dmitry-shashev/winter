@@ -53,6 +53,27 @@
         }
       }
     },
+    "/api/v1/content/get-image": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/file/upload-form": {
       "get": {
         "tags": [
