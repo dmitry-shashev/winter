@@ -11,8 +11,8 @@ using Winter.Core;
 namespace Winter.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221006155456_NewField")]
-    partial class NewField
+    [Migration("20221006084755_MockUsers")]
+    partial class MockUsers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace Winter.Migrations
                 .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,10 +29,6 @@ namespace Winter.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -50,24 +46,21 @@ namespace Winter.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 10, 6, 18, 54, 56, 580, DateTimeKind.Local).AddTicks(8130),
-                            Email = "tt1@tt.tt",
+                            CreatedAt = new DateTime(2022, 10, 6, 11, 47, 55, 310, DateTimeKind.Local).AddTicks(3260),
                             FirstName = "Tester",
                             LastName = "Testerov"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 10, 6, 18, 54, 56, 580, DateTimeKind.Local).AddTicks(8170),
-                            Email = "tt2@tt.tt",
+                            CreatedAt = new DateTime(2022, 10, 6, 11, 47, 55, 310, DateTimeKind.Local).AddTicks(3320),
                             FirstName = "Mike",
                             LastName = "Tyson"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 10, 6, 18, 54, 56, 580, DateTimeKind.Local).AddTicks(8170),
-                            Email = "tt3@tt.tt",
+                            CreatedAt = new DateTime(2022, 10, 6, 11, 47, 55, 310, DateTimeKind.Local).AddTicks(3320),
                             FirstName = "Red",
                             LastName = "Sky"
                         });

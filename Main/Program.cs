@@ -33,7 +33,6 @@ builder.Configuration
     reloadOnChange: true
   )
   .AddEnvironmentVariables();
-;
 
 //##############################################################
 // database

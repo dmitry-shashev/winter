@@ -25,7 +25,7 @@
         "build",
         "-c",
         "SwaggerConfig",
-        "./Winter.csproj"
+        "./Main/Main.csproj"
       ]
     },
     {

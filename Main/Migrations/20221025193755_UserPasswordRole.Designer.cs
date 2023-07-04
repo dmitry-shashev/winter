@@ -11,15 +11,14 @@ using Winter.Core;
 namespace Winter.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230517190526_UploadedFile")]
-    partial class UploadedFile
+    [Migration("20221025193755_UserPasswordRole")]
+    partial class UserPasswordRole
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.5")
+                .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("LibraryUser", b =>
@@ -54,7 +53,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.Book", b =>
+            modelBuilder.Entity("Main.Models.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -101,7 +100,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.Library", b =>
+            modelBuilder.Entity("Main.Models.Library", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -128,26 +127,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.UploadedFile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UploadedFiles");
-                });
-
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -188,7 +168,7 @@ namespace Winter.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 5, 17, 22, 5, 26, 274, DateTimeKind.Local).AddTicks(5980),
+                            CreatedAt = new DateTime(2022, 10, 25, 22, 37, 55, 682, DateTimeKind.Local).AddTicks(1990),
                             Email = "tt1@tt.tt",
                             FirstName = "Tester",
                             LastName = "Testerov",
@@ -199,7 +179,7 @@ namespace Winter.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 5, 17, 22, 5, 26, 274, DateTimeKind.Local).AddTicks(6030),
+                            CreatedAt = new DateTime(2022, 10, 25, 22, 37, 55, 682, DateTimeKind.Local).AddTicks(2040),
                             Email = "tt2@tt.tt",
                             FirstName = "Mike",
                             LastName = "Tyson",
@@ -210,7 +190,7 @@ namespace Winter.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2023, 5, 17, 22, 5, 26, 274, DateTimeKind.Local).AddTicks(6030),
+                            CreatedAt = new DateTime(2022, 10, 25, 22, 37, 55, 682, DateTimeKind.Local).AddTicks(2050),
                             Email = "tt3@tt.tt",
                             FirstName = "Red",
                             LastName = "Sky",
@@ -222,22 +202,22 @@ namespace Winter.Migrations
 
             modelBuilder.Entity("LibraryUser", b =>
                 {
-                    b.HasOne("Winter.Models.Library", null)
+                    b.HasOne("Main.Models.Library", null)
                         .WithMany()
                         .HasForeignKey("LibrariesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Winter.Models.User", null)
+                    b.HasOne("Main.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Winter.Models.Book", b =>
+            modelBuilder.Entity("Main.Models.Book", b =>
                 {
-                    b.HasOne("Winter.Models.User", "User")
+                    b.HasOne("Main.Models.User", "User")
                         .WithMany("Books")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -246,7 +226,7 @@ namespace Winter.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Navigation("Books");
                 });

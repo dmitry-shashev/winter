@@ -51,7 +51,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.Book", b =>
+            modelBuilder.Entity("Main.Models.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,7 +98,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.Library", b =>
+            modelBuilder.Entity("Main.Models.Library", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -125,7 +125,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.UploadedFile", b =>
+            modelBuilder.Entity("Main.Models.UploadedFile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -144,7 +144,7 @@ namespace Winter.Migrations
                     b.ToTable("UploadedFiles");
                 });
 
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -219,22 +219,22 @@ namespace Winter.Migrations
 
             modelBuilder.Entity("LibraryUser", b =>
                 {
-                    b.HasOne("Winter.Models.Library", null)
+                    b.HasOne("Main.Models.Library", null)
                         .WithMany()
                         .HasForeignKey("LibrariesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Winter.Models.User", null)
+                    b.HasOne("Main.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Winter.Models.Book", b =>
+            modelBuilder.Entity("Main.Models.Book", b =>
                 {
-                    b.HasOne("Winter.Models.User", "User")
+                    b.HasOne("Main.Models.User", "User")
                         .WithMany("Books")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -243,7 +243,7 @@ namespace Winter.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Navigation("Books");
                 });
