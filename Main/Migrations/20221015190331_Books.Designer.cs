@@ -21,7 +21,7 @@ namespace Winter.Migrations
                 .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Winter.Models.Book", b =>
+            modelBuilder.Entity("Main.Models.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -127,9 +127,9 @@ namespace Winter.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Winter.Models.Book", b =>
+            modelBuilder.Entity("Main.Models.Book", b =>
                 {
-                    b.HasOne("Winter.Models.User", "User")
+                    b.HasOne("Main.Models.User", "User")
                         .WithMany("Books")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -138,7 +138,7 @@ namespace Winter.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Winter.Models.User", b =>
+            modelBuilder.Entity("Main.Models.User", b =>
                 {
                     b.Navigation("Books");
                 });
