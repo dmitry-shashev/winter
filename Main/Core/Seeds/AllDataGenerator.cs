@@ -6,7 +6,7 @@ public abstract class AllDataGenerator
   {
     return new List<User>()
     {
-      new User()
+      new()
       {
         Id = 1,
         Email = "tt1@tt.tt",
@@ -14,9 +14,9 @@ public abstract class AllDataGenerator
         LastName = "Testerov",
         Role = "Admin",
         Password = "123456",
-        Phone = "12-12-12",
+        Phone = "12-12-12"
       },
-      new User()
+      new()
       {
         Id = 2,
         Email = "tt2@tt.tt",
@@ -24,9 +24,9 @@ public abstract class AllDataGenerator
         LastName = "Tyson",
         Role = "",
         Password = "123456",
-        Phone = "13-99-14",
+        Phone = "13-99-14"
       },
-      new User()
+      new()
       {
         Id = 3,
         Email = "tt3@tt.tt",
@@ -34,7 +34,7 @@ public abstract class AllDataGenerator
         LastName = "Sky",
         Role = "Owner",
         Password = "123456",
-        Phone = "33-33-32",
+        Phone = "33-33-32"
       }
     };
   }
@@ -43,26 +43,26 @@ public abstract class AllDataGenerator
   {
     return new List<Book>()
     {
-      new Book()
+      new()
       {
         Id = 1,
         Author = "Jane Austen",
         BookName = "Pride and Prejudice",
-        UserId = 1,
+        UserId = 1
       },
-      new Book()
+      new()
       {
         Id = 2,
         Author = "George Orwell",
         BookName = "1984",
-        UserId = 1,
+        UserId = 1
       },
-      new Book()
+      new()
       {
         Id = 3,
         Author = "Hamlet",
         BookName = "William Shakespeare",
-        UserId = 3,
+        UserId = 3
       }
     };
   }
@@ -71,13 +71,13 @@ public abstract class AllDataGenerator
   {
     return new List<Library>()
     {
-      new Library()
+      new()
       {
         Id = 1,
         Address = "Some street",
         Users = new List<User>()
       },
-      new Library() { Id = 2, Address = "Work street", }
+      new() { Id = 2, Address = "Work street" }
     };
   }
 }

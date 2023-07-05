@@ -23,12 +23,10 @@ public class ConfigureSwaggerOptions
     foreach (
       var description in _provider.ApiVersionDescriptions
     )
-    {
       options.SwaggerDoc(
         description.GroupName,
         CreateVersionInfo(description)
       );
-    }
   }
 
   public void Configure(
@@ -50,10 +48,8 @@ public class ConfigureSwaggerOptions
     };
 
     if (desc.IsDeprecated)
-    {
       info.Description +=
         " This API version has been deprecated. Please use one of the new APIs available from the explorer.";
-    }
 
     return info;
   }

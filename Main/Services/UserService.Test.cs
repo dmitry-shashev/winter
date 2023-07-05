@@ -14,7 +14,7 @@ public static class UserServiceTest
   {
     var options =
       new DbContextOptionsBuilder<ApplicationDbContext>()
-        .UseInMemoryDatabase(databaseName: "winter")
+        .UseInMemoryDatabase("winter")
         .Options;
     using var context = new ApplicationDbContext(options);
 
@@ -27,7 +27,7 @@ public static class UserServiceTest
     context.SaveChanges();
 
     // check
-    UsersService usersService = new UsersService(context);
+    var usersService = new UsersService(context);
     var user = usersService.GetById(2);
 
     Assert.Equal("tt2@tt.tt", user.Email);

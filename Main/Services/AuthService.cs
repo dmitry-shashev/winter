@@ -51,9 +51,7 @@ public class AuthService
       p => p.Email == email && p.Password == password
     );
     if (user is null)
-    {
       throw new AuthenticateException();
-    }
     return user;
   }
 }

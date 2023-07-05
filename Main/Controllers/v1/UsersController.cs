@@ -39,10 +39,10 @@ public class UsersController : ControllerBase
   )
   {
     var createdUser = _usersService.CreateUser(
-      email: userDto.Email,
-      firstName: userDto.FirstName,
-      lastName: userDto.LastName,
-      phone: userDto.Phone
+      userDto.Email,
+      userDto.FirstName,
+      userDto.LastName,
+      userDto.Phone
     );
     return createdUser.AsResponseDto();
   }
@@ -54,10 +54,10 @@ public class UsersController : ControllerBase
   )
   {
     var updatedUser = _usersService.UpdateUser(
-      id: id,
-      firstName: userDto.FirstName,
-      lastName: userDto.LastName,
-      phone: userDto.Phone
+      id,
+      userDto.FirstName,
+      userDto.LastName,
+      userDto.Phone
     );
     return updatedUser.AsResponseDto();
   }

@@ -23,12 +23,12 @@ public class RoleValue
 
   public int CompareTo(RoleValue? other)
   {
-    return this.Id - other?.Id ?? 0;
+    return Id - other?.Id ?? 0;
   }
 
   public bool Equals(RoleValue? other)
   {
-    return this.Id == other?.Id;
+    return Id == other?.Id;
   }
 
   public override bool Equals(object? obj)

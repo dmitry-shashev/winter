@@ -20,7 +20,7 @@ public class ContentController
   public IActionResult GetImage(string name)
   {
     var fileBytes = _fileService.GetFile(name);
-    MemoryStream ms = new MemoryStream(fileBytes);
+    var ms = new MemoryStream(fileBytes);
     var contentType = StrHelper.DetermineFileContentType(
       name
     );

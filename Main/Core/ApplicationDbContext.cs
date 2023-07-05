@@ -8,6 +8,7 @@ public class ApplicationDbContext : DbContext
   public DbSet<User> Users => Set<User>();
   public DbSet<Book> Books => Set<Book>();
   public DbSet<Library> Libraries => Set<Library>();
+
   public DbSet<UploadedFile> UploadedFiles =>
     Set<UploadedFile>();
 
@@ -31,13 +32,13 @@ public class ApplicationDbContext : DbContext
       builder =>
       {
         builder.HasData(
-          new { LibrariesId = 1, UsersId = 1, }
+          new { LibrariesId = 1, UsersId = 1 }
         );
         builder.HasData(
-          new { LibrariesId = 1, UsersId = 2, }
+          new { LibrariesId = 1, UsersId = 2 }
         );
         builder.HasData(
-          new { LibrariesId = 2, UsersId = 3, }
+          new { LibrariesId = 2, UsersId = 3 }
         );
       }
     );

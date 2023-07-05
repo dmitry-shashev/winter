@@ -12,9 +12,7 @@ public class SessionController : ControllerBase
     if (
       !Request.Cookies.TryGetValue("color", out var color)
     )
-    {
       return "Cookie 'color' was not found";
-    }
     return $"The value is - {color}";
   }
 
