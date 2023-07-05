@@ -19,18 +19,12 @@ public class UsersService
   {
     var query = _dbContext.Users.AsQueryable();
     if (withBooks)
-    {
       query = query.Include(v => v.Books);
-    }
     if (withLibraries)
-    {
       query = query.Include(v => v.Libraries);
-    }
     var foundUser = query.FirstOrDefault(p => p.Id == id);
     if (foundUser is null)
-    {
       throw new NotFoundException("User was not found");
-    }
     return foundUser;
   }
 
@@ -47,7 +41,7 @@ public class UsersService
       Email = email,
       FirstName = firstName,
       LastName = lastName,
-      Phone = phone,
+      Phone = phone
     };
     _dbContext.Users.Add(newUser);
     _dbContext.SaveChanges();
@@ -61,14 +55,10 @@ public class UsersService
   {
     var query = _dbContext.Users.AsQueryable();
     if (withBooks)
-    {
       query = query.Include(v => v.Books);
-    }
 
     if (withLibraries)
-    {
       query = query.Include(v => v.Libraries);
-    }
     return query.ToList();
   }
 
@@ -83,9 +73,7 @@ public class UsersService
       v => v.Id == id
     );
     if (user is null)
-    {
       throw new NotFoundException("User was not found");
-    }
 
     user.FirstName = firstName;
     user.LastName = lastName;
@@ -102,9 +90,7 @@ public class UsersService
       v => v.Id == id
     );
     if (user is null)
-    {
       throw new NotFoundException("User was not found");
-    }
 
     _dbContext.Users.Remove(user);
   }

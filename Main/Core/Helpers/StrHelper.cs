@@ -15,9 +15,7 @@ public abstract class StrHelper
   public static bool IsEmpty(string? value)
   {
     if (value is null)
-    {
       return true;
-    }
     return value.Trim() == "";
   }
 
@@ -32,9 +30,7 @@ public abstract class StrHelper
         StringComparison.OrdinalIgnoreCase
       ) >= 0
     )
-    {
       contentType = "application/pdf";
-    }
     if (
       fileName.IndexOf(
         ".jpg",
@@ -45,9 +41,7 @@ public abstract class StrHelper
         StringComparison.OrdinalIgnoreCase
       ) >= 0
     )
-    {
       contentType = "image/jpeg";
-    }
 
     return contentType;
   }

@@ -25,7 +25,7 @@ public class FileService
       new UploadedFile()
       {
         Name = file.FileName,
-        Path = finalPath,
+        Path = finalPath
       }
     );
     _dbContext.SaveChanges();

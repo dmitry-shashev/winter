@@ -14,9 +14,7 @@ public static class BoolExtension
   )
   {
     if (value is null or false)
-    {
       return falseValue;
-    }
 
     return trueValue;
   }

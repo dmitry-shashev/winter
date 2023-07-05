@@ -13,7 +13,7 @@ public class AuthController : ControllerBase
   [HttpGetFor(nameof(Login))]
   public string Login(LoginRequestDto loginDto)
   {
-    User user = _authService.Authenticate(
+    var user = _authService.Authenticate(
       loginDto.Email,
       loginDto.Password
     );

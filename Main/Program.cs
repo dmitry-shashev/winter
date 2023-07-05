@@ -22,15 +22,11 @@ var environmentName = builder.Environment.EnvironmentName;
 // - will try to load `appsettings.Staging.json`
 
 builder.Configuration
-  .AddJsonFile(
-    "appsettings.json",
-    optional: false,
-    reloadOnChange: true
-  )
+  .AddJsonFile("appsettings.json", false, true)
   .AddJsonFile(
     $"appsettings.{environmentName}.json",
-    optional: true,
-    reloadOnChange: true
+    true,
+    true
   )
   .AddEnvironmentVariables();
 
@@ -100,8 +96,7 @@ builder.Services
 
 builder.Services.AddApiVersioning(opt =>
 {
-  opt.DefaultApiVersion =
-    new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+  opt.DefaultApiVersion = new ApiVersion(1, 0);
   opt.AssumeDefaultVersionWhenUnspecified = true;
   opt.ReportApiVersions = true;
   opt.ApiVersionReader = ApiVersionReader.Combine(
@@ -139,12 +134,10 @@ app.UseSwaggerUI(options =>
   foreach (
     var description in apiVersionDescriptionProvider.ApiVersionDescriptions
   )
-  {
     options.SwaggerEndpoint(
       $"/swagger/{description.GroupName}/swagger.json",
       description.GroupName.ToUpperInvariant()
     );
-  }
 });
 
 app.UseHttpsRedirection();

@@ -22,11 +22,9 @@ public sealed class CustomPhoneAttribute
 
   public override bool IsValid(object? value)
   {
-    var phone = (String?)value;
+    var phone = (string?)value;
     if (phone is null)
-    {
       return false;
-    }
 
     var match = Regex.Match(PhoneRegex, phone);
     return match.Success;
