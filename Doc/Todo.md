@@ -24,9 +24,8 @@
 [x] Unit tests for other parts
 [x] Docker for db only
 [x] Rest examples
-[ ] e2e tests
-    As a subfolder e2e using nodejs
-    https://www.educative.io/answers/how-to-test-an-api-in-nodejs
+[x] e2e tests
+[ ] add login to e2e
 [ ] Generation scripts
 [ ] JWT
 [ ] Validation library

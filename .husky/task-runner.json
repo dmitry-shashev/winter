@@ -15,7 +15,8 @@
       "name":"Run unit tests",
       "command":"dotnet",
       "args":[
-        "test"
+        "test",
+        "Main"
       ]
     },
     {
