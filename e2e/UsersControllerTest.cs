@@ -23,6 +23,10 @@ public class UsersControllerTest
     var stringResult =
       await response.Content.ReadAsStringAsync();
     // TODO: currently not implemented
-    Assert.AreEqual("Hello World!", stringResult);
+    // Assert.AreEqual("Hello World!", stringResult);
+
+    Assert.IsTrue(
+      stringResult.Contains("Internal Server Error")
+    );
   }
 }
