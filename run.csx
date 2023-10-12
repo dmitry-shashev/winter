@@ -1,4 +1,4 @@
-#!/usr/bin/env dotnet script
+#!/usr/bin/env dotnet-script
 
 #load  "./Scripts/functions.cs"
 
