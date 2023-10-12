@@ -1,7 +1,9 @@
 ﻿#### Init the engine
 
+> Create a project (Not a solution!)
+
 ```bash
-dotnew webapi --name Winter
+dotnet new webapi --name Winter
 ```
 
 #### Add re-format code
